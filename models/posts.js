@@ -11,10 +11,27 @@ Posts.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    text:{
+    body:{
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+    created_date:{
+        type: DataTypes.DATE,
+        allowNull: false,
+        default: DataTypes.NOW
+    },
+    updated_date:{
+        type: DataTypes.DATE,
+        allowNull: false,
+        default: DataTypes.NOW
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
   }
 );
 
