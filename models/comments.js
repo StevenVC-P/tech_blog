@@ -11,19 +11,23 @@ Comments.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    body:{
+    comment_text:{
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    created_date:{
+    user_id:{
         type: DataTypes.DATE,
-        allowNull: false,
-        default: DataTypes.NOW
+        references: {
+          model: 'User',
+          key: 'id'
+        }
     },
-    updated_date:{
-        type: DataTypes.DATE,
-        allowNull: false,
-        default: DataTypes.NOW
+    post_id:{
+      type: DataTypes.DATE,
+      references: {
+        model: 'Posts',
+        key: 'id'
+      }
     },
   },
   {
