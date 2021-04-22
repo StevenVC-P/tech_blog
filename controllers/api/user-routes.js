@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const{ User, Posts, Comments} = require('../../models');
+const{ User, Posts, Comments} = require('../../models/Index');
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -89,7 +89,7 @@ router.post('/login', (req,res) => {
     });  
 });
   
-router.post('/logout', withAuth, (req,res) => {
+router.post('/logout', (req,res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
@@ -99,7 +99,7 @@ router.post('/logout', withAuth, (req,res) => {
     }
 })
 
-router.put('/:id', withAuth, (req,res) => {
+router.put('/:id', (req,res) => {
     User.update(req.body, {
         indivdualHooks:true,
         where:{
@@ -119,7 +119,7 @@ router.put('/:id', withAuth, (req,res) => {
         });
     })
   
-  router.delete('/:id', withAuth, (req, res) => {
+  router.delete('/:id', (req, res) => {
       User.destroy({
         where: {
           id: req.params.id

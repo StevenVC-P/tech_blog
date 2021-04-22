@@ -25,7 +25,7 @@ Comments.init(
     post_id:{
       type: DataTypes.DATE,
       references: {
-        model: 'Posts',
+        model: 'post',
         key: 'id'
       }
     },
@@ -34,7 +34,7 @@ Comments.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'posts',
+    modelName: 'comment',
   }
 );
 

@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 // the models
-const { User, Posts, Comments } = require('../models');
+const { User, Posts, Comments } = require('../models/Index');
 // the authorization middleware to redirect unauthenticated users to the login page
 const withAuth = require('../utils/auth')
 

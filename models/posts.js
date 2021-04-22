@@ -1,4 +1,4 @@
-const { Model, DataTypes, TEXT, INTEGER } = require('sequelize');
+const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Posts extends Model {}
@@ -12,11 +12,11 @@ Posts.init(
         autoIncrement: true,
     },
     title:{
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     post_text:{
-      type: DataType.TEXT,
+      type: DataTypes.TEXT,
       allNull: false,
       validate:{
         len:[1]
@@ -35,7 +35,7 @@ Posts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'posts',
   }
 );
 
