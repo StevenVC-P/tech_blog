@@ -11,12 +11,13 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li>Home</li>
-                <li>Dashboard</li>
-                <li>Login</li>
-                <li>Logout</li>
-            </ul>
+            <span> <a href="/">Home</span>
+            {{#if loggedIn}}
+            <a href="/dashboard">Dashboard</a>
+            <button id ="logout" class="btn-no-style">Logout</button>
+            {{else}}
+            <a href = "/login">Login</a>
+            {{if}}
         </nav>
         <h1>{{{ heading }}}</h1>
     </header>
